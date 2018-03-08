@@ -25,7 +25,7 @@ router.get('/', function (req, res, next) {
           ?cho dc:date ?date .
           ?cho void:inDataset ?dataset .
         }
-        LIMIT 500 OFFSET 3500`;
+        LIMIT 100 OFFSET 400`;
 
     const encodedquery = encodeURIComponent(sparqlquery);
 
@@ -38,40 +38,16 @@ router.get('/', function (req, res, next) {
             const rows = data.results.bindings; // get the results
 
             for (let i = 0; i < rows.length; ++i) {
-                images.push(rows[i]['img']['value']);
+                let image = {}
+                image.url = rows[i]['img']['value']
+                images.push(image);
             }
-            faceScan(images);
+            res.json(images);
         })
         .catch(function (error) {
             // if there is any error you will catch them here
             console.log(error);
         });
-
-
-    let faces = [];
-    let countDone = 0;
-
-    // faceScan(people);
-
-    function faceScan(images) {
-        images.forEach((obj, i) => {
-            client.faceDetection(obj)
-                .then(results => {
-                    countDone += 1;
-                     if (results[0].faceAnnotations.length > 0) {
-                        let face = {};
-                        face.panAngle = results[0].faceAnnotations[0].panAngle;
-                        face.img = obj;
-                        faces.push(face)
-                    }
-                    if (images.length === countDone) {
-                        res.json(faces);
-                    }
-                }).catch(err => {
-                console.error('ERROR:', err);
-            });
-        });
-    }
 
 });
 
