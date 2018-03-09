@@ -3,8 +3,9 @@
         halfWidth: window.innerWidth / 2,
         timeOut: 0,
         loader: document.querySelector('.loader'),
-        loadingText: document.querySelector('p'),
+        loadingText: document.querySelector('.text'),
         heading: document.querySelector('h1'),
+        details: document.querySelector('.details'),
         init() {
             api.handleRequest()
             window.addEventListener('resize', (event) => {
@@ -36,8 +37,6 @@
             request();
         },
         faceScan(images) {
-            // old fd321669869241c08bd3dbe67b6a1316
-            // old https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect/
             const subscriptionKey = "df6dc32e785e451492fa214aa1f85fe7";
             const uriBase = "https://westeurope.api.cognitive.microsoft.com/face/v1.0/detect/";
 
@@ -69,9 +68,11 @@
                     return response.json();
                 }).then(data => {
                     countDone += 1;
-                    document.querySelector('p').innerHTML = countDone + '/100 images scanned';
+                    app.loadingText.innerHTML = countDone + '/100 images scanned';
                     if (data.length > 0 && data.length < 2) {
+                        console.log(data);
                         let face = {};
+                        face.age = data[0].faceAttributes.age;
                         face.panAngle = data[0].faceAttributes.headPose.yaw;
                         face.roll =  data[0].faceAttributes.headPose.roll;
                         face.img = obj.url;
@@ -93,37 +94,6 @@
                 if(i === images.length) clearInterval(interval);
             }, 150);
 
-
-
-            // data.forEach((obj, i) => {
-            //     fetch(uriBase + "?" + url, {
-            //         method: 'POST',
-            //         body: JSON.stringify(obj), // must match 'Content-Type' header
-            //         headers: new Headers({
-            //             'Content-Type': 'application/json',
-            //             'Ocp-Apim-Subscription-Key': subscriptionKey
-            //         })
-            //     }).then(response => {
-            //         return response.json();
-            //     }).then(data => {
-            //         countDone += 1;
-            //         if (data.length > 0) {
-            //             let face = {};
-            //             face.panAngle = data[0].faceAttributes.headPose.yaw;
-            //             face.roll =  data[0].faceAttributes.headPose.roll;
-            //             face.img = obj.url;
-            //             faces.push(face)
-            //         }
-            //         if (images.length === countDone) {
-            //             collection.all = faces;
-            //             mouse.onMouseMovement();
-            //         }
-            //         //render first three items
-            //     }).catch(err => {
-            //         // Error :(
-            //         console.log(err);
-            //     });
-            // });
         }
     }
 
@@ -155,6 +125,7 @@
         changeImages(obj) {
             let img = document.querySelector(".placeholder");
             img.src = obj[this.count].img;
+            app.details.innerHTML = "age: " + obj[this.count].age;
             this.count += 1;
 
             if (this.count >= obj.length) {

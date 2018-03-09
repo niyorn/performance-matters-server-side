@@ -29,7 +29,11 @@ a {
 .loader.hidden {
   display: none; }
 
-p {
+.details {
+  color: #FFF;
+  text-align: center; }
+
+.text {
   position: absolute;
   display: block;
   text-align: center;

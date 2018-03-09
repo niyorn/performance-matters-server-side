@@ -1,14 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const vision = require('@google-cloud/vision');
 const fetch = require("node-fetch");
-
-const people = [`https://charismamag-secure-charismamedia.netdna-ssl.com/images/stories/2017/life/Men/man-checking-out.jpg`, `https://static.pexels.com/photos/428341/pexels-photo-428341.jpeg`, `https://static.pexels.com/photos/733872/pexels-photo-733872.jpeg`, `https://www.gras.nl/AFBEELDINGEN/gras.jpg`, `https://i.kinja-img.com/gawker-media/image/upload/s--nTz2VDWV--/c_fill,fl_progressive,g_center,h_900,q_80,w_1600/pfctnvnbflbifoqfjvyt.jpg`]
-
-
-const client = new vision.ImageAnnotatorClient({
-    keyFilename: '/Users/fenna/Downloads/keys.json'
-});
 
 router.get('/', function (req, res, next) {
     const sparqlquery = `
@@ -36,7 +28,6 @@ router.get('/', function (req, res, next) {
         .then(function (data) {
             let images = [];
             const rows = data.results.bindings; // get the results
-
             for (let i = 0; i < rows.length; ++i) {
                 let image = {}
                 image.url = rows[i]['img']['value']
