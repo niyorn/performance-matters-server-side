@@ -17,7 +17,7 @@ router.get('/', function (req, res, next) {
           ?cho dc:date ?date .
           ?cho void:inDataset ?dataset .
         }
-        LIMIT 100 OFFSET 400`;
+        LIMIT 20 OFFSET 410`;
 
     const encodedquery = encodeURIComponent(sparqlquery);
 
