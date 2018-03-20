@@ -1,0 +1,68 @@
+body {
+  box-sizing: border-box;
+  background-color: #000;
+  font: 1em 'Montserrat', sans-serif; }
+
+a {
+  color: #00B7FF; }
+
+.placeholder {
+  width: 100%;
+  min-height: 100%; }
+
+@keyframes spinning {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+.loader {
+  position: absolute;
+  width: 3.125em;
+  display: block;
+  left: 0;
+  right: 0;
+  top: 40%;
+  margin: auto;
+  animation: spinning 2s infinite; }
+
+.loader.hidden {
+  display: none; }
+
+.details {
+  color: #FFF;
+  text-align: center; }
+
+.text {
+  position: absolute;
+  display: block;
+  text-align: center;
+  left: 50%;
+  color: #fff;
+  transform: translateX(-50%);
+  right: 0;
+  top: 50%;
+  margin: auto; }
+
+p.hidden {
+  display: none; }
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 0;
+  color: #fff;
+  font-size: 5em; }
+
+h1.active {
+  opacity: 1; }
+
+div {
+  position: relative;
+  border: none;
+  width: 700px;
+  height: 600px;
+  overflow: hidden;
+  margin: auto; }
+
+/*# sourceMappingURL=style.css.map */
