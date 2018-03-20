@@ -1,8 +1,7 @@
 
 ## Get started
 
-* Run in your terminal in the desired directory
-$ git clone https://github.com/fennadew/performance-matters-server-side.git
+* Run $ git clone https://github.com/fennadew/performance-matters-server-side.git in your terminal in the desired directory
 
 * Create a new file called vars.env
 In this file, add a SUB_KEY= with a valid key from [Microsoft face API](https://azure.microsoft.com/en-us/services/cognitive-services/face/).
