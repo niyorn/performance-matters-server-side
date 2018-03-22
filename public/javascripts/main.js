@@ -4,25 +4,21 @@
         timeOut: 0,
         loader: document.querySelector('.loader'),
         loadingText: document.querySelector('.text'),
-        heading: document.querySelector('h1'),
-        subHeading: document.querySelector('h2'),
-        details: document.querySelector('.details'),
-        images:  document.getElementsByTagName('img'),
+        heading: {},
+        div: {},
+        placeholder: {},
+        details: {},
+        container: document.querySelector('main'),
         init() {
-            const length = this.images.length;
-            for (let i = 0; i < length; i++) {
-                this.images[0].parentNode.removeChild(this.images[0]);
-            }
-            for (let i = 0; i < this.subHeading.length; i++) {
-                this.subHeading[0].parentNode.removeChild(this.subHeading[0]);
-            }
-            this.heading.classList.add('inactive');
-            this.heading.innerHTML = "Move your mouse";
             api.handleRequest()
             window.addEventListener('resize', (event) => {
                 this.halfWidth = window.innerWidth / 2;
             })
         }
+    }
+
+    let data = {
+
     }
 
     const api = {
@@ -37,8 +33,22 @@
                 try {
                     // Success handler
                     const response = await fetch(reqSettings);
-                    const data = await response.json();
-                    console.log(data)
+                    data = await response.json();
+
+                    app.heading = document.createElement("h1");
+                    app.details = document.createElement("p");
+                    app.div = document.createElement("div");
+                    app.placeholder =  document.createElement("img");
+                    app.details.setAttribute("class", "details");
+                    app.placeholder.setAttribute("class", "placeholder");
+                    app.heading.appendChild(document.createTextNode("Move your mouse"));
+                    app.container.appendChild(app.heading);
+                    app.container.appendChild(app.details);
+                    app.div.appendChild(app.placeholder);
+                    app.container.appendChild(app.div);
+
+                    mouse.onMouseMovement();
+
 
                 } catch (err) {
                     // Error handler shows message in the DOM that the API request failed
@@ -61,7 +71,7 @@
             if (this.count >= obj.length) {
                 this.count = 0;
             }
-            }
+        }
     }
 
     const mouse = {
@@ -70,31 +80,28 @@
             if (app.halfWidth - 100 > event.pageX) {
                 if (this.mousePosition !== 1) {
                     this.mousePosition = 1;
-                    const allImagesLeft = collection.filterLeft();
                     clearInterval(app.timeOut)
                     images.count = 0;
                     app.timeOut = setInterval(() => {
-                        images.changeImages(allImagesLeft);
+                        images.changeImages(data.left);
                     }, 500);
                 }
             } else if (app.halfWidth + 100 < event.pageX) {
                 if (this.mousePosition !== -1) {
                     this.mousePosition = -1;
-                    let allImagesRight = collection.filterRight();
                     clearInterval(app.timeOut)
                     images.count = 0;
                     app.timeOut = setInterval(() => {
-                        images.changeImages(allImagesRight);
+                        images.changeImages(data.right);
                     }, 500);
                 }
             } else {
                 if (this.mousePosition !== 0) {
                     this.mousePosition = 0;
-                    let allImagesCenter = collection.filterCenter();
                     clearInterval(app.timeOut)
                     images.count = 0;
                     app.timeOut = setInterval(() => {
-                        images.changeImages(allImagesCenter);
+                        images.changeImages(data.center);
                     }, 500);
                 }
             }

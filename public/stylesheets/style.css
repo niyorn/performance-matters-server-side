@@ -69,6 +69,15 @@ div {
   position: relative;
   margin: auto; }
 
+main div {
+  display: block;
+  position: relative;
+  border: none;
+  width: 700px;
+  height: 600px;
+  overflow: hidden;
+  margin: auto; }
+
 ul {
   width: 33.3%;
   padding: 0; }

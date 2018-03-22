@@ -1,35 +1,35 @@
 <%- include('head.ejs') %>
-
+<main></main>
+<noscript>
 <h1>City portrets sorted on head position</h1>
-<p class="details"></p>
-<div>
-    <h2>Looking left</h2>
-    <h2>Looking center</h2>
-    <h2>Looking right</h2>
-</div>
-<div>
-    <ul>
-        <% for(var i = 0; i < data.left.length; i++) { %>
-        <li>
-            <img src="<%= data.left[i].img %>">
-        </li>
-        <% } %>
-    </ul>
-    <ul>
-        <% for(var i = 0; i < data.center.length; i++) { %>
-        <li>
-            <img src="<%= data.center[i].img %>">
-        </li>
-        <% } %>
-    </ul>
-    <ul>
-        <% for(var i = 0; i < data.right.length; i++) { %>
-        <li>
-            <img src="<%= data.right[i].img %>">
-        </li>
-        <% } %>
-    </ul>
-</div>
-
+    <div>
+        <h2>Looking left</h2>
+        <h2>Looking center</h2>
+        <h2>Looking right</h2>
+    </div>
+    <div>
+        <ul>
+            <% for(var i = 0; i < data.left.length; i++) { %>
+            <li>
+                <img src="<%= data.left[i].img %>">
+            </li>
+            <% } %>
+        </ul>
+        <ul>
+            <% for(var i = 0; i < data.center.length; i++) { %>
+            <li>
+                <img src="<%= data.center[i].img %>">
+            </li>
+            <% } %>
+        </ul>
+        <ul>
+            <% for(var i = 0; i < data.right.length; i++) { %>
+            <li>
+                <img src="<%= data.right[i].img %>">
+            </li>
+            <% } %>
+        </ul>
+    </div>
+</noscript>
 
 <%- include('foot.ejs') %>
