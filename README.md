@@ -1,7 +1,9 @@
 # Portrets following mouse
 
 Portrets from the city archive of Amsterdam follow the direction of the mouse by looking at it. The face position of the portrets is detected with the [Microsoft face API](https://azure.microsoft.com/en-us/services/cognitive-services/face/).
+
 ![Example webapp](https://github.com/fennadew/performance-matters-server-side/blob/master/public/images/example.gif)
+
 ## Get started
 
 * Run $ git clone https://github.com/fennadew/performance-matters-server-side.git in your terminal in the desired directory
