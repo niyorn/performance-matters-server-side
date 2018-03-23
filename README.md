@@ -47,7 +47,8 @@ App listens on `http://localhost:8000/`.
 ## License
 MIT © Fenna de Wilde
 
-Resources
+## Resources
+
 [env](https://github.com/motdotla/dotenv)
 
 [express](https://github.com/expressjs/express)
