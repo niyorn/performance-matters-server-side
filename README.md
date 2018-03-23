@@ -2,10 +2,11 @@
 
 Portrets from the city archive of Amsterdam follow the direction of the mouse by looking at it. The face position of the portrets is detected with the [Microsoft face API](https://azure.microsoft.com/en-us/services/cognitive-services/face/).
 *   [x] Works without JavaScript
-*   [x] Server: [`express`][express]
-*   [x] Templating: [`EJS`][EJS]
-*   [x] Bundling server side: [`CommonJS`][CommonJS]
-*   [x] Bundling client side: [`Browserify`][Browserify]
+*   [x] Server: Express
+*   [x] Templating: EJS
+*   [x] Env: dotenv
+*   [x] Bundling server side: CommonJS
+*   [x] Bundling client side: Browserify
 
 ![Example webapp](https://github.com/fennadew/performance-matters-server-side/blob/master/public/images/example.gif)
 
@@ -42,6 +43,19 @@ App listens on `http://localhost:8000/`.
 *   [ ] Minify JS and CSS
 *   [ ] Improve styling
 *   [ ] Add more content
+
+## License
+MIT © Fenna de Wilde
+
+Resources
+[env](https://github.com/motdotla/dotenv)
+
+[express](https://github.com/expressjs/express)
+
+[commonJS](https://nodejs.org/docs/latest/api/modules.html)
+
+[Browserify](http://browserify.org/)
+
 
 
 
