@@ -15,8 +15,10 @@ You can find the npm scripts in the `package.json` file under "scripts". When yo
 Browserify lets you require('modules') in the browser by bundling up all of your dependencies. Node does that automatically by using CommonJS.
 
  ` "scripts": {
+
     "start": "node app.js",
     "build-js": "browserify public/javascripts/*.js > public/javascripts/bundle.js"
+
   } `
 
 ## Get started
@@ -35,11 +37,11 @@ App listens on `http://localhost:8000/`.
 * To bundle the JavaScript files into bundle.js run `npm run bundle-js`.
 
 ## To do
-*   [] Improve performance
-*   [] Add gzip
-*   [] Minify JS and CSS
-*   [] Improve styling
-*   [] Add more content
+*   [ ] Improve performance
+*   [ ] Add gzip
+*   [ ] Minify JS and CSS
+*   [ ] Improve styling
+*   [ ] Add more content
 
 
 
