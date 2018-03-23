@@ -14,10 +14,10 @@ You can find the npm scripts in the `package.json` file under "scripts". When yo
 `build-js` is a custom npm script so you need to run `npm run build-js` in your terminal. It will run browserify. This looks up all the scripts in the public/javascripts folder and bundles all modules in public/javascripts/bundle.js.
 Browserify lets you require('modules') in the browser by bundling up all of your dependencies. Node does that automatically by using CommonJS.
 
- "scripts": {
+ ` "scripts": {
     "start": "node app.js",
     "build-js": "browserify public/javascripts/*.js > public/javascripts/bundle.js"
-  }
+  } `
 
 ## Get started
 
