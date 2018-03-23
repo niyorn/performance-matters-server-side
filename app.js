@@ -4,7 +4,7 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const sassMiddleware = require('node-sass-middleware');
-
+const compression = require('compression');
 const index = require('./routes/index');
 const users = require('./routes/users');
 const api = require('./routes/api');
@@ -14,6 +14,18 @@ const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+app.use(compression({filter: shouldCompress}))
+
+function shouldCompress (req, res) {
+    if (req.headers['x-no-compression']) {
+        // don't compress responses with this request header
+        return false
+    }
+
+    // fallback to standard filter function
+    return compression.filter(req, res)
+}
 
 app.use(logger('dev'));
 app.use(bodyParser.json());

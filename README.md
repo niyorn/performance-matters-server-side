@@ -5,6 +5,7 @@ Portrets from the city archive of Amsterdam follow the direction of the mouse by
 *   [x] Server: Express
 *   [x] Templating: EJS
 *   [x] Env: dotenv
+*   [x] GZIP: Compression
 *   [x] Bundling server side: CommonJS
 *   [x] Bundling client side: Browserify
 
@@ -37,9 +38,20 @@ App listens on `http://localhost:8000/`.
 
 * To bundle the JavaScript files into bundle.js run `npm run bundle-js`.
 
+## Perfomance
+1. Added Gzip
+added node module "compression" middleware for Node.js Express. The middleware will attempt to compress response bodies for all request that traverse through the middleware, based on the given options. (ref 1.)
+Improves paint with 0.04sec and usable page with 0.12 sec on slow 3G.
+
+<b>Before</b>
+![Example webapp](https://github.com/fennadew/performance-matters-server-side/blob/master/public/images/voor.png)
+
+<b>After</b>
+![Example webapp](https://github.com/fennadew/performance-matters-server-side/blob/master/public/images/na.png)
+
 ## To do
 *   [ ] Improve performance
-*   [ ] Add gzip
+*   [ x ] Add gzip
 *   [ ] Minify JS and CSS
 *   [ ] Improve styling
 *   [ ] Add more content
@@ -51,9 +63,11 @@ MIT © Fenna de Wilde
 
 [env](https://github.com/motdotla/dotenv)
 
-[express](https://github.com/expressjs/express)
+[Compression](https://github.com/expressjs/compression)
 
-[commonJS](https://nodejs.org/docs/latest/api/modules.html)
+[Express](https://github.com/expressjs/express)
+
+[CommonJS](https://nodejs.org/docs/latest/api/modules.html)
 
 [Browserify](http://browserify.org/)
 
