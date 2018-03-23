@@ -40,7 +40,7 @@ App listens on `http://localhost:8000/`.
 
 ## Perfomance
 1. Added Gzip
-added node module "compression" middleware for Node.js Express. The middleware will attempt to compress response bodies for all request that traverse through the middleware, based on the given options. (ref 1.)
+added node module "compression" middleware for Node.js Express. The middleware will attempt to compress response bodies for all request that traverse through the middleware, based on the given options. 
 Improves paint with 0.04sec and usable page with 0.12 sec on slow 3G.
 
 <b>Before</b>
@@ -51,7 +51,7 @@ Improves paint with 0.04sec and usable page with 0.12 sec on slow 3G.
 
 ## To do
 *   [ ] Improve performance
-*   [ x ] Add gzip
+*   [x] Add gzip
 *   [ ] Minify JS and CSS
 *   [ ] Improve styling
 *   [ ] Add more content
