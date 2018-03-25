@@ -7,6 +7,8 @@
     <meta name="author" content="Chanakarn Niyornram">
     <meta name="description" content="A site where metro and tramlines are showed from Amsterdam">
     <title>Amsterdam metro en tramlijnen</title>
+    <link rel="manifest" href="../manifest/manifest.json">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
     <style>
     :root{
         --material-shaduw-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -15,12 +17,19 @@
         --material-shaduw-4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     
         --material-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+        --primary-color: #1E88E5;
     }
     
     *{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+    }
+
+    body{
+    font-family: 'Robot', sans-serif;
+    font-dispay: swap;
     }
     
     header{
@@ -77,7 +86,45 @@
     .list-container a:focus, .list-container a:hover{
         box-shadow: var(--material-shaduw-3);
     }
+
+    .detail{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .detail section{
+        width: 80vw;
+        max-width: 30em;
+        margin: 1.4rem;
+        box-shadow: var(--material-shaduw-1);
+    }
+
+    .detail img{
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .detail section h2, .detail section p{
+        padding: 0 1rem;
+    }
+
+    .detail section h2{
+        margin-bottom: 1rem;
+    }
+
+    .back {
+        padding: 1rem;
+        background-color: var(--primary-color);
+        color: white;
+        position: sticky;
+        top: 0;
+        text-decoration: none;
+        transition: var(--material-transition);
+    }
+
+    .back:focus, .back:hover{
+        box-shadow: var(--material-shaduw-4);
+    }
     </style>    
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 </head>
 <body>

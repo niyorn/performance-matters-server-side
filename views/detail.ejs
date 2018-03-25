@@ -1,8 +1,7 @@
 <%- include partials/head.ejs %>
+<a class="back" href="/">Back</a>
 <main class="detail">
-    <a href="/">Back</a>
-
-    <%data.forEach(function(i){%>
+        <%data.forEach(function(i){%>
         <section>
                 </style>
                 <img src="<%= i.photo %>" alt="<%= i.title%> ">
@@ -10,11 +9,6 @@
                 <p><%=i.description %></p>
                 <p><%=i.year%></p>
         </section>
-
-        <section>
-            <p>
-                Hallo
-            </p>
         </section>
     <%})%>
 </main>
