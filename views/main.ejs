@@ -1,0 +1,13 @@
+<%- include partials/head.ejs %>
+
+<div>
+    <ul>
+        <%data.forEach(function(i){%>
+
+            <li><a href="/detail/<%=i.properties.linenr%>">
+                <%=i.properties.linelabel%>
+            </a></li>
+        <%})%>
+    </ul>
+</div>
+<%- include partials/tail.ejs %>
