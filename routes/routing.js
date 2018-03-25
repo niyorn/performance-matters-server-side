@@ -12,7 +12,7 @@ router.use(function timeLog(req, res, next) {
 // define the home page route
 router.get('/', function (req, res) {
     //get the data
-    fs.readFile('./data/lines2018.geojson', 'utf8', function (err, data) {
+    fs.readFile('./data/lines2017.geojson', 'utf8', function (err, data) {
         if (err) throw err
         let info = JSON.parse(data)
         info = info.features
