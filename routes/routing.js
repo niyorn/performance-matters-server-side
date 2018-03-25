@@ -2,7 +2,6 @@ var fetch = require('node-fetch')
 var fs = require('fs');
 var express = require('express')
 var router = express.Router()
-var api = require('./api')
 
 // middleware that is specific to this router
 router.use(function timeLog(req, res, next) {
