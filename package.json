@@ -1,7 +1,7 @@
 {
   "name": "amsterdam_tram_and_metro",
   "version": "1.0.0",
-  "description": "",
+  "description": "Show photo of tram and metro lines of Amsterdam",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app"
