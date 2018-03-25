@@ -1,13 +1,16 @@
 <%- include partials/head.ejs %>
+    <main>
+        <section class="list-container">
+            <ul>
+                <%data.forEach(function(i){%>
 
-<div>
-    <ul>
-        <%data.forEach(function(i){%>
-
-            <li><a href="/detail/<%=i.properties.linenr%>">
-                <%=i.properties.linelabel%>
-            </a></li>
-        <%})%>
-    </ul>
-</div>
-<%- include partials/tail.ejs %>
+                    <li>
+                        <a href="/detail/<%=i.properties.linenr%>">
+                            <%=i.properties.linelabel%>
+                        </a>
+                    </li>
+                    <%})%>
+            </ul>
+        </section>
+    </main>
+    <%- include partials/tail.ejs %>
