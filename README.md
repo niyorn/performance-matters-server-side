@@ -1,6 +1,10 @@
 # performance-matters-server-side
-from ![A gif that shows how the application works](readme_assets/intro.gif)
 
+[Demo](https://e6a41781.ngrok.io)
+![A gif that shows how the application works](readme_assets/intro.gif)
+
+
+![Score of google audit](readme_assets/audit.PNG)
 ## Getting started
 
 Clone repository
@@ -94,9 +98,24 @@ Lets see the result:
 
 ![File size of our application with compression](readme_assets/wafs-es6-module-bundle.PNG)
 
-As you can see the file size went from 3.57kb to 2.4kb that's a decrease of 23%. A really big change.
+As you can see the file size went from 3.57kb to 2.4kb that's a decrease of __23%__. A really big change.
 
-Also the time it takes to load the javascript file have also decrease significantly. It went from a ~ 140 ms to 25ms. A decrease of: ~ 82%. 
+Also the time it takes to load the javascript file have also decrease significantly. It went from a ~ 140 ms to 25ms. A decrease of: ~ __82%__.
+
+###HTTP/2
+We can takes this futher by adding http/2 response in our server. What http/2 does is instead sending one file at a time, we can now send multiple file in one connection.
+
+http/1
+
+![A chart of http1 protocol](readme_assets/http1.PNG)
+
+http/2
+
+![A chart of http2 protocol](readme_assets/http2.PNG)
+
+And here as wel, a huge difference.
+
+
 
 
 
