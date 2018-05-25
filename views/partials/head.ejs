@@ -1,161 +1,173 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <Cache-Control: public>
     <meta name="author" content="Chanakarn Niyornram">
     <meta name="description" content="A site where metro and tramlines are showed from Amsterdam">
     <title>Amsterdam metro en tramlijnen</title>
     <link rel="manifest" href="../manifest/manifest.json">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
     <style>
-    :root{
-        --material-shaduw-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-        --material-shaduw-2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-        --material-shaduw-3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-        --material-shaduw-4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    
-        --material-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        :root {
+            --material-shaduw-1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            --material-shaduw-2: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            --material-shaduw-3: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            --material-shaduw-4: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 
-        --primary-color: #01579B;
-    }
-    
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+            --material-transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 
-    body{
-        font-family: 'Robot', sans-serif;
-    }
-    
-    header{
-        height: 24em;
-        background-color: #0288D1;
-        padding-top: 1rem;
-    }
-    
-    header h1{
-        font-size: 14vw;
-        text-align: center;
-        color: white;
-    }
-    @media (min-width: 50em) {
-        header h1{
-            font-size: 11em;
-        }
-    }
-    
-    .list-container{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        background-color: rgb(231, 231, 231);
-    }
-    
-    .list-container ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        margin-top: -9em;
-    }
-    
-    .list-container li {
-        list-style-type: none;
-    }
-    
-    .list-container a {
-        display: flex;
-        margin: 1.7rem ;
-        padding: 6rem;
-        box-shadow: var(--material-shaduw-1);
-        max-width:11em;
-        width: 80vw;
-        transition: var(--material-transition);
-        text-decoration: none;
-        justify-content: center;
-        font-size: 2.7em;
-        color: rgb(22, 22, 22);
-        background-color: white;
-        text-align: center;
-    }
-    
-    .list-container a:focus, .list-container a:hover{
-        box-shadow: var(--material-shaduw-3);
-    }
-
-    .detail{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .detail section{
-        width: 80vw;
-        max-width: 30em;
-        margin: 1.4rem;
-        box-shadow: var(--material-shaduw-1);
-        padding-bottom: 1rem;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        animation: slide-in 1s;
-    }
-    
-    .detail img{
-        width: 100%;
-        height: 20em;
-        object-fit: cover;
-    }
-
-    .detail section h2, .detail section p{
-        padding: 0 1rem;
-    }
-
-    .detail section h2{
-        margin: 1rem 0;
-    }
-
-    .detail .description{
-        color: rgb(29, 28, 28);
-        margin-bottom: 1rem;
-    }
-
-    .detail .year{
-        margin-top: auto;
-        width: 100%;
-        text-align: right;
-        color: black;
-        padding: 0 1rem;
-    }
-
-    .back {
-        padding: 1rem;
-        background-color: var(--primary-color);
-        color: white;
-        position: sticky;
-        top: 0;
-        text-decoration: none;
-        transition: var(--material-transition);
-    }
-
-    .back:focus, .back:hover{
-        box-shadow: var(--material-shaduw-4);
-    }
-
-    @keyframes slide-in {
-        from{
-            opacity: 0;
-            transform: translateY(3em)
+            --primary-color: #01579B;
         }
 
-        to{
-            opacity: 1;
-            transform: translateY(0)
+        @font-face {
+            font-family: ExampleFont;
+            src: url(./font/Ubuntu-R.ttf) format('ttf');
+            font-display: swap;
         }
-    }
-    </style>    
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        header {
+            height: 24em;
+            background-color: #0288D1;
+            padding-top: 1rem;
+        }
+
+        header h1 {
+            font-size: 14vw;
+            text-align: center;
+            color: white;
+        }
+
+        @media (min-width: 50em) {
+            header h1 {
+                font-size: 11em;
+            }
+        }
+
+        .list-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: rgb(231, 231, 231);
+        }
+
+        .list-container ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin-top: -9em;
+        }
+
+        .list-container li {
+            list-style-type: none;
+        }
+
+        .list-container a {
+            display: flex;
+            margin: 1.7rem;
+            padding: 6rem;
+            box-shadow: var(--material-shaduw-1);
+            max-width: 11em;
+            width: 80vw;
+            transition: var(--material-transition);
+            text-decoration: none;
+            justify-content: center;
+            font-size: 2.7em;
+            color: rgb(22, 22, 22);
+            background-color: white;
+            text-align: center;
+        }
+
+        .list-container a:focus,
+        .list-container a:hover {
+            box-shadow: var(--material-shaduw-3);
+        }
+
+        .detail {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .detail section {
+            width: 80vw;
+            max-width: 30em;
+            margin: 1.4rem;
+            box-shadow: var(--material-shaduw-1);
+            padding-bottom: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            /* animation: slide-in 1s; */
+        }
+
+        .detail img {
+            width: 100%;
+            height: 20em;
+            object-fit: cover;
+        }
+
+        .detail section h2,
+        .detail section p {
+            padding: 0 1rem;
+        }
+
+        .detail section h2 {
+            margin: 1rem 0;
+        }
+
+        .detail .description {
+            color: rgb(29, 28, 28);
+            margin-bottom: 1rem;
+        }
+
+        .detail .year {
+            margin-top: auto;
+            width: 100%;
+            text-align: right;
+            color: black;
+            padding: 0 1rem;
+        }
+
+        .back {
+            padding: 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            position: sticky;
+            top: 0;
+            text-decoration: none;
+            transition: var(--material-transition);
+        }
+
+        .back:focus,
+        .back:hover {
+            box-shadow: var(--material-shaduw-4);
+        }
+
+        @keyframes slide-in {
+            from {
+                opacity: 0;
+                transform: translateY(3em)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+    </style>
 </head>
+
 <body>
