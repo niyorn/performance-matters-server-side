@@ -1,4 +1,17 @@
 {
   "short_name": "Lines",
-  "name": "Tram en Metro lijnen"
+  "name": "Tram en Metro lijnen",
+  "description": "show photo of metro lines",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "/",
+  "background_color": "#FFF",
+  "theme_color": "#000",
+  "icons": [
+    {
+      "src": "./images/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+ ]
 }

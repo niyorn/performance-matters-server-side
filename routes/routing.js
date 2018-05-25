@@ -63,5 +63,8 @@ router.get('/detail/:id', function (req, res) {
 
 })
 
+router.get('/offline', function (req, res) {
+    res.render('error')
+})
 
 module.exports = router

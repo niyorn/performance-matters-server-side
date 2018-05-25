@@ -1,7 +1,7 @@
 const CACHE_NAME = 'metro_v1';
 const cacheURL = [
-    '/', 
-    'https://fonts.googleapis.com/css?family=Roboto:300,400,700'
+    '/',
+    '/offline',
 ]
 
 /*
@@ -48,6 +48,9 @@ self.addEventListener('fetch', function (event) {
                 return response
             }
             return fetch(event.request)
+        })
+        .catch(function(){
+            return caches.match('/offline')
         })
     )
 })
